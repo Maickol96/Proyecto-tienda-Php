@@ -1,7 +1,288 @@
-#logo img{
-    width: 150px;
+/*GENERALES*/
+* {
+    padding: 0px; /*Margen interior del un elemento*/
+    margin: 0px; /*Margen exterior de un elemento*/
+    font-family: sans-serif, Helvetica, Arial;
+
 }
 
-.product img{
+body {
+    background: url('../img/bg.png'); /*Fondo*/
+}
+
+/*Enlaces de la pagina web
+ a{   background: #01B1EA;
+}
+*/
+
+/*Cuando ya se ha accedido a un enlace -> seudo clase visited*/
+a:visited {
+    color: #01B1EA;
+}
+
+/*para cuado hagamso click e un enlace cambie de color -> seudo clase hover*/
+a:hover {
+    color: #555555;
+}
+
+/*CONTAINER*/
+#container {
+    width: 80%;
+    margin: 0px auto;
+    box-shadow: 0px 0px 10px gray; /*para poner la sombra a la caja de la web*/
+    background: white;
+}
+
+
+/*ESTILOS A HEADER*/
+#header {
+    height: 145px; /*altura*/
+    background: #f0f0f0; /*color*/
+
+}
+
+#logo { /*centrar logo*/
+    padding: 20px;
+    margin-left: 20px;
+    float: left;
+}
+
+#logo img {
     width: 100px;
+    float: left;
+}
+
+#logo a { /*Para centrar texto principal*/
+    float: left;
+    font-size: 40px; /*tamanio de letra*/
+    letter-spacing: 4px;
+    font-family: 'Open Sans', Arial, Helvetica;
+    text-transform: uppercase;
+    color: #01B1EA;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 18px;
+    margin-left: 25px;
+    text-shadow: 0px 2px 1px #222222; /*para sombreado de texto*/
+    transition: all 300ms;  /*animacion para cuando pase el cursor se mueva */
+
+}
+
+#logo a:hover {
+    text-shadow: 0px 2px 1px #222222, 0px 0px 4px #01B1EA; /*animacion para cuando pase el cursor se mueva */
+}
+
+
+/*MENU*/
+
+#menu{
+    clear: both;/*Para que mantenga en menu flotado*/
+    background: #222;
+    color: white;
+    height: 55px;
+    border-bottom: 4px solid #01B1EA;
+
+}
+
+#menu ul{
+    list-style: none ;
+    text_decoration: none;
+    margin: 0px auto;
+    margin-left: 25px;
+}
+
+#menu ul li{
+    line-height: 55px;
+    float: left;
+    border-right: 1px solid #363636;
+}
+
+#menu a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding-left: 12px;
+    padding-right: 12px;
+    transition: all 300ms; /**/
+}
+
+#menu a:first-child{/*primer hijo*/
+    border-left: 1px solid #363636;
+}
+
+#menu a:hover{/*Poner que cuando pase por encima de los enlaces los resalte*/
+    background: #01B1EA;
+
+}
+
+/*CONTENT*/
+#content{
+    margin: 0px auto;
+    overflow: hidden;
+    background: white;
+}
+
+/*BARRA LATERAL*/
+#lateral{
+    width: 22%;
+    min-height: 500px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 10px;
+
+}
+
+#lateral .block_aside{
+    display: block;
+    width: 90%;
+    margin: 5px auto;
+    padding: 10px;
+}
+
+#lateral h3 {
+    display: block;
+    color: #222;
+    width: 100%;
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #E1E1E1;
+    border-bottom: 2px solid #01B1EA;
+}
+#lateral ul{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+    /*estilos de los enlaces de redirecciones*/
+    #lateral ul li{
+        list-style: square;/*para que los puntos se vean cuadrados*/
+        margin-left: 20px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+/*FOMRS*/
+label,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select{
+    display: block;
+    width: 95%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select{
+    border: 1px solid #C9C9C9;
+    box-shadow: 0px 0px 2px #ccc inset;
+    background: white;
+    padding: 2px;
+    color: gray;
+    transition: all 300ms;
+
+}
+
+/*FOMRS*/
+/*Focus: para poner estilos o se resalte cuando pasemos el cursor por encima de esos campos*/
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus{
+    border: 1px solid #1579b5;
+    color: black;
+}
+
+/*estilo a los botones*/
+input[type="button"],
+input[type="submit"],
+button, .button{
+    display: block;
+    border-radius: 2px;
+    width: auto;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    background: #2979CD;
+    border: 1px solid #11608E;
+}
+
+.button{
+    background: #33AE3D;
+    color: white !important;/*forsamos que este color se tenga mas en cuenta*/
+    text-decoration: none;
+}
+
+label,/*para el espaciado*/
+input[type="button"],
+input[type="submit"],
+button{
+    display: block;
+    margin-top: 10px;
+}
+
+/*PARTE CENTRAL*/
+#central{
+    width: 72%;
+    min-height: 500px;
+    float: right;
+    border-left: 1px solid #ccc;
+    box-shadow: -5px -1px 5px #ddd;
+    padding: 25px;
+}
+
+#central h1{
+    font-size: 24px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 20px;
+    padding-top: 0px;
+}
+
+/*PRODUCTOS*/
+.product{
+    width: 30%;
+  /*  border-right: 1px solid #ccc;*/
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+
+}
+
+.product img {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.product h2{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.product p{
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/*FOOTER*/
+#footer{
+    clear: both;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    background: #222222;
+    border-top: 4px solid #01B1EA;
 }
